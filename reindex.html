@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sure Learning - Virtual Learning Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    
+    <style>
+        /* Global Styles */
+        
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f7fc;
+            color: rgb(54, 69, 79); /* Neutral dark gray */
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(to right, rgb(138, 43, 226), rgb(123, 104, 238)); /* Vibrant Purple */
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: rgb(255, 215, 0); /* Accent Yellow */
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 100px 40px;
+            color: white;
+            background: url('https://via.placeholder.com/1200x500') no-repeat center center/cover;
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .primary-btn {
+            background-color: rgb(50, 205, 50); /* Bright Lime Green */
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background-color: rgb(173, 255, 47);
+        }
+
+        /* Home Schooling Section */
+        .home-schooling {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background: white;
+        }
+
+        .home-text {
+            max-width: 500px;
+        }
+
+        .home-text h2 {
+            color: rgb(138, 43, 226);
+        }
+
+        .home-text p {
+            margin-bottom: 20px;
+        }
+
+        .home-img img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f7f9fc;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        .subscribe-btn {
+            background-color: rgb(255, 215, 0);
+            color: black;
+        }
+
+        .subscribe-btn:hover {
+            background-color: rgb(255, 255, 0);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgb(54, 69, 79);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background: rgb(138, 43, 226);
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .home-schooling {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        .features-section {
+        padding: 80px 20px;
+        text-align: center;
+        background: #f7f9fc;
+    }
+
+    .features-header h2 {
+        font-size: 2.5em;
+        color: rgb(138, 43, 226);
+        margin-bottom: 10px;
+    }
+
+    .features-header p {
+        font-size: 1.2em;
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+    .features-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .feature-card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-icon img {
+        width: 60px;
+        margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.5em;
+        color: rgb(123, 104, 238);
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        color: #555;
+        font-size: 1.1em;
+    }
+    .feature-card {
+    display: block !important;
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/images/SureLearning Logo.png" alt="Sure Learning Logo">
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-section">
+            <h1>Learn Anytime, Anywhere with Sure Learning</h1>
+            <p>Join thousands mastering new skills with top teachers.</p>
+            <a href="#courses" class="btn primary-btn">Get Started</a>
+        </div>
+    </header>
+
+   <!-- Why Choose Us Section -->
+<section id="features" class="features-section">
+    <div class="features-header">
+        <h2>Why Choose Us?</h2>
+        <p>Discover the benefits of learning with Sure Learning.</p>
+    </div>
+
+    <div class="features-container">
+        <div class="feature-card" data-aos="fade-up">
+            <div class="feature-icon">
+                <img src="https://via.placeholder.com/60" alt="Virtual Classrooms">
+            </div>
+            <h3>Interactive Classes</h3>
+            <p>Engage in real-time discussions with teachers and students worldwide.</p>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-icon">
+                <img src="https://via.placeholder.com/60" alt="Expert Teachers">
+            </div>
+            <h3>Expert Tutors</h3>
+            <p>Learn from industry professionals with years of experience.</p>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-icon">
+                <img src="https://via.placeholder.com/60" alt="International Exams">
+            </div>
+            <h3>Exam Preparation</h3>
+            <p>Master WAEC, NECO, JAMB, SAT, and more with structured courses.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Home Schooling Section -->
+    <section class="home-schooling">
+        <div class="home-text">
+            <h2>Benefits of Home Schooling</h2>
+            <p>✔ Personalized learning at your own pace</p>
+            <p>✔ Flexible schedule for better focus</p>
+            <p>✔ High-quality education from expert tutors</p>
+            <p>✔ Safe and convenient learning environment</p>
+            <a href="/register" class="btn primary-btn">Enroll Now</a>
+        </div>
+        <div class="home-img">
+            <img src="/images/" alt="Home Schooling">
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    
+    <section id="pricing" class="pricing-section">
+        <h2>Our Pricing Plans</h2>
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <h3>Monthly</h3>
+                <p>₦10,000/month</p>
+                <button class="btn subscribe-btn" onclick="subscribe()">Subscribe</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Quarterly</h3>
+                <p>₦30,000/quarter</p>
+                <button class="btn subscribe-btn" onclick="subscribe()">Subscribe</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Annual</h3>
+                <p>₦115,000/year</p>
+                <button class="btn subscribe-btn" onclick="subscribe()">Subscribe</button>
+            </div>
+        </div>
+    </section>
+    <!--Enrole for one subject-->
+    <section class="home-schooling">
+        <div class="home-text">
+            <h2>if your a confuse then enrole </h2>
+            <p>✔ Personalized learning at your own pace</p>
+            <p>✔ Flexible schedule for better focus</p>
+            <p>✔ High-quality education from expert tutors</p>
+            <p>✔ Safe and convenient learning environment</p>
+            <a href="/register" class="btn primary-btn">Enroll Now</a>
+        </div>
+        <div class="home-img">
+            <img src="https://via.placeholder.com/500x300" alt="Home Schooling">
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 Sure Learning. All Rights Reserved. | <a href="#contact">Contact Us</a></p>
+    </footer>
+
+    <script>
+        
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+        function subscribe() {
+            window.location.href = "https://surelearning.onrender.com/register";
+        }
+        
+
+        AOS.init();
+    
+    </script>
+      
+</body>
+
+</html>
